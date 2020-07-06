@@ -1,0 +1,31 @@
+<p>registrar-cliente works!</p>
+<div class="contenedor">
+    <div class="formulario-registro">
+        <form (ngSubmit)="save()" #registrarForm="ngForm">
+            <div class="row">
+                <div class="col">
+                    <div class="titulo">
+                        <h1>Registrar Cliente</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.nombre" name="nombre"
+                            required #nombre="ngModel" placeholder="Nombre">
+                        <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            <div *ngIf="nombre.errors.required">
+                                Nombre es requerido
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info" [disabled]="registrarForm.form.invalid">Registrar</button>
+            </div>
+        </form>
+    </div>
+</div>

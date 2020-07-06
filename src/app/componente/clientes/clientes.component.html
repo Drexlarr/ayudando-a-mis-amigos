@@ -1,0 +1,20 @@
+<div class = "container">
+    <div class="row">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>select</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of clientes">
+                    <th>{{c.id}}</th>
+                    <th>{{c.nombre}}</th>
+                    <th><button (click)="Select(c)">Select</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

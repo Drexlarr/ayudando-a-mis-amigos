@@ -1,0 +1,22 @@
+<div class="row">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>cantidad</th>
+                <th>precio total</th>
+                <th>quitar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cp of cliente.productos">
+                <th>{{cp.producto.id}}</th>
+                <th>{{cp.producto.nombre}}</th>
+                <th>{{cp.q}}</th>
+                <th>{{cp.q*cp.producto.precio}}</th>
+                <th><button (click)="eraseCP(cp.id)">eliminar</button></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
